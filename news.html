@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trending Games Carousel</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Owl Carousel CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Roboto", sans-serif;
+      background: #111;
+      color: #fff;
+    }
+
+    h2 {
+      margin-bottom: 48px;
+      padding-bottom: 16px;
+      font-size: 28px;
+      line-height: 28px;
+      font-weight: 700;
+      position: relative;
+      text-transform: capitalize;
+    }
+
+    .line-title {
+      position: relative;
+      width: 400px;
+    }
+    .line-title::before,
+    .line-title::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 4px;
+      border-radius: 2px;
+    }
+    .line-title::before {
+      width: 100%;
+      background: #333;
+    }
+    .line-title::after {
+      width: 40px;
+      background: #e73700;
+    }
+
+    .game-section {
+      padding: 60px 50px;
+      text-align: center;
+    }
+
+    .game-section .owl-stage {
+      margin: 15px 0;
+      display: flex;
+    }
+
+    .game-section .item {
+      margin: 0 15px 60px;
+      width: 320px;
+      height: 400px;
+      display: flex;
+      align-items: flex-end;
+      background: #343434 no-repeat center center / cover;
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      transition: all 0.4s ease-in-out;
+      cursor: pointer;
+    }
+
+    .game-section .item.active {
+      width: 500px;
+      box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    .game-section .item:after {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      left: 0;
+      top: 0;
+      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+    }
+
+    .item-desc {
+      padding: 0 24px 12px;
+      color: #fff;
+      position: relative;
+      z-index: 1;
+      transform: translateY(calc(100% - 54px));
+      transition: all 0.4s ease-in-out;
+    }
+
+    .item.active .item-desc {
+      transform: translateY(0);
+    }
+
+    .item-desc p {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: all 0.4s ease-in-out 0.2s;
+    }
+
+    .item.active .item-desc p {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Owl dots */
+    .owl-theme .owl-dots .owl-dot span {
+      background: #666 !important;
+    }
+    .owl-theme .owl-dots .owl-dot.active span {
+      background: #e73700 !important;
+    }
+
+    /* Owl nav arrows */
+    .owl-nav button {
+      position: absolute;
+      top: 40%;
+      background: rgba(0, 0, 0, 0.4) !important;
+      color: white !important;
+      font-size: 2rem !important;
+      padding: 10px 18px !important;
+      border-radius: 50% !important;
+      transition: background 0.3s ease;
+    }
+    .owl-nav button:hover {
+      background: #e73700 !important;
+    }
+    .owl-nav .owl-prev {
+      left: -10px;
+    }
+    .owl-nav .owl-next {
+      right: -10px;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="game-section">
+    <h2 class="line-title">Trending Games</h2>
+    <div class="owl-carousel custom-carousel owl-theme">
+
+      <div class="item active" style="background-image: url('https://www.yudiz.com/codepen/expandable-animated-card-slider/dota-2.jpg');">
+        <div class="item-desc">
+          <h3>Dota 2</h3>
+          <p>Dota 2 is a multiplayer online battle arena by Valve. The game is a sequel to Defense of the Ancients.</p>
+        </div>
+      </div>
+
+      <div class="item" style="background-image: url('https://www.yudiz.com/codepen/expandable-animated-card-slider/winter-3.jpg');">
+        <div class="item-desc">
+          <h3>The Witcher 3</h3>
+          <p>Embark on an open-world adventure filled with monsters, magic, and destiny.</p>
+        </div>
+      </div>
+
+      <div class="item" style="background-image: url('https://www.yudiz.com/codepen/expandable-animated-card-slider/rdr-2.jpg');">
+        <div class="item-desc">
+          <h3>RDR 2</h3>
+          <p>Live the outlaw life across the American frontier in this story-driven epic.</p>
+        </div>
+      </div>
+
+      <div class="item" style="background-image: url('https://www.yudiz.com/codepen/expandable-animated-card-slider/pubg.jpg');">
+        <div class="item-desc">
+          <h3>PUBG Mobile</h3>
+          <p>Drop in, gear up, and fight to be the last one standing in this battle royale hit.</p>
+        </div>
+      </div>
+
+      <div class="item" style="background-image: url('https://www.yudiz.com/codepen/expandable-animated-card-slider/fortnite.jpg');">
+        <div class="item-desc">
+          <h3>Fortnite</h3>
+          <p>Build, battle, and outlast in a colorful world of endless action.</p>
+        </div>
+      </div>
+
+      <div class="item" style="background-image: url('https://www.yudiz.com/codepen/expandable-animated-card-slider/far-cry-5.jpg');">
+        <div class="item-desc">
+          <h3>Far Cry 5</h3>
+          <p>Take down a fanatical cult in an open-world Montana, where freedom is worth fighting for.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Owl Carousel JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+  <!-- Main Script -->
+  <script>
+    $(".custom-carousel").owlCarousel({
+      autoWidth: true,
+      loop: true,
+      margin: 20,
+      center: true,
+      dots: true,
+      nav: true,
+      autoplay: true,
+      autoplayTimeout: 4000,
+      smartSpeed: 600
+    });
+
+    $(document).ready(function () {
+      $(".custom-carousel .item").click(function () {
+        $(".custom-carousel .item").not($(this)).removeClass("active");
+        $(this).toggleClass("active");
+      });
+    });
+  </script>
+
+</body>
+</html>
