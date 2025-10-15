@@ -78,7 +78,6 @@
 }
 
 
-
 .ctn-button button{
     background-image: linear-gradient(to right,#FF6B35, #F7E05A );
     padding: 20px;
@@ -98,44 +97,87 @@
   transform: scale(1.1);
   opacity: 1;
 }
-.about-section-page-container{
+.characters-containers{
   background-image: linear-gradient(135deg,#2D2D2D,#FF6B35);
-  padding: 10%;
+  padding: 5%;
+  justify-content: center;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+} 
+.container-character{
+   width: 100%; /* allow grid to take full width */
+
+}
+.character-class{
+  display: grid; /* make the ul a grid container */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px; /* space between cards */
+  padding: 0;
+  margin: 0;
+  list-style: none; /* define columns */
+
+}
+
+.box-item{
+  background-image: linear-gradient(200deg,#FF6B35,#2d2d2d);
+  width: 320px;
+  height: 510px;
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  display: flex;
-  font-family: "Roboto", sans-serif;
-  letter-spacing: 0.8px;
-  font-size: 20px;
-   color: #FFD700;
-   position: relative;
+  box-sizing: border-box;
+  margin: 20px 10px;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 7px;
+  border: 1px solid #FFD700;
+}
+
+.box-item:hover{
+  transform: scale(1.03);
+  transform-style: preserve-3d;
+    box-shadow: 12px 12px 12px 5px rgba(14, 14, 14, 0.719);
+
 
 }
-.about-section-page-container strong{
+.box-details{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+
+}
+
+.logo-branding{
+   width: 200px;
+  height: auto;
+}
+.box-details p{
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #f5f5f5;
+  text-align: center;
+  margin-bottom: 30px;
+  line-height: 20px;
+  letter-spacing: 2px;
+}
+.name-box{
   color: #F7E05A;
-  font: bolder;
+  font-weight: bolder;
   font-family: sans-serif;
   font-size: 25px;
+  letter-spacing: 2px;
+  margin-top: 25px;
 }
-.about-containt{
-  margin-right: 100px;
-  display: grid;
-  justify-content: baseline;
-}
-.about-section-image-page img{
-  background: no-repeat;
+.model{
+  max-height: 60%;
+  max-width: 150%;
+  flex-direction: column;
   object-fit: cover;
-  height: 600px;
-  display: block;
-  border-radius: 15px;
-  background-image: linear-gradient(138deg,#4CAF50,#FF6B35,#2D2D2D );
-  padding: 7px;
-  border: 5px;
-  margin-right: 30px;
- transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.about-section-image-page img:hover{
-  transform: scale(1.05);
-  box-shadow: 0 20px 40px rgb(255, 107, 53);
-
+  transition: all 0.3s ease;
 }
