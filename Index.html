@@ -276,8 +276,8 @@ container.addEventListener('mousemove', (e) => {
   const rect = container.getBoundingClientRect();
   const x = e.clientX - rect.left; // mouse X within container
   const y = e.clientY - rect.top;  // mouse Y within container
-  const centerX = rect.width / 2;
-  const centerY = rect.height / 2;
+  const centerX = rect.width / 3;
+  const centerY = rect.height / 3;
   
   const rotateX = ((y - centerY) / centerY) * 5; // rotate max ±5°
   const rotateY = ((x - centerX) / centerX) * 5;
