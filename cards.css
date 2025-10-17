@@ -8,7 +8,7 @@
   padding: 0.7rem 2rem;
   display: flex;
   align-items: center;
-  background-image: linear-gradient(166deg, rgba(30,58,138,0.8), rgba(247,224,90,0.6));
+  background-image: linear-gradient(45deg, rgba(30, 59, 138, 0.719), rgba(247,224,90,0.6) );
   position: fixed;
   width: 100%;
   font-weight: 700;
@@ -108,7 +108,9 @@
 
 }
 .Landing-page{
-   background-image: linear-gradient(135deg,#4CAF50,#F7E05A);
+   background-image: linear-gradient(60deg,#4CAF50,#F7E05A,#FF6B35,#FFB347);
+   background-size: 300% 300%;
+animation: gradient 10s ease infinite;
     color: #2D2D2D;
     padding: 8%;
 font-family: 'Poppins', sans-serif;
@@ -121,31 +123,50 @@ line-height: 1.6;
     font-size: large;
     scroll-snap-type: y mandatory;
 }
+@keyframes gradient{
+  0%{
+    background-position: 0% 45%;
+  }
+  50%{
+    background-position: 100% 50%;
+  }
+  100%{
+    background-position: 0% 55%;
+  }
+}
 .landing-page-containt{
     max-width: 55%;
     gap: 30px;
 }
 .landing-page-containt button{
-  background-image: linear-gradient(135deg,#FF6B35, #F7E05A );
+  background-image: linear-gradient(135deg,#FF6B35, #F7E05A,#4CAF50 );
+  background-size: 200% 200%;
     width: 30%;
     height: 80px;
     cursor: pointer;
     border-radius: 10px;
-    border: 3px solid#A9A9A9;
-    color: #2D2D2D;
+border: 3px solid#A9A9A9;    
+color: #2D2D2D;
 font-family: 'Poppins', sans-serif;
-    transition: transform 0.3s ease;
-     box-shadow: 0 4px 12px rgba(247, 224, 90, 0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(247, 224, 90, 0.5);
      margin-top: 20px;
      font-size: 17px;
-     letter-spacing: 0.5px;
+     letter-spacing: 1.2px;
+       font-weight: 600;
+       opacity: 0.95;
+
 
 }
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 .landing-page-containt button:hover{
-  background-image: linear-gradient(135deg,#4CAF50,#F7E05A);
-    color: #F5F5DC;
-    transform: scale(1.2);
-    box-shadow: 0 8px 24px rgba(255, 200, 200, 0.5);
+    transform: scale(1.1);
+  box-shadow: 0 8px 24px rgba(255, 200, 150, 0.6);
+
 }
 .landing-page-image{
     display: grid;
@@ -155,21 +176,26 @@ font-family: 'Poppins', sans-serif;
     transition: transform 0.3 ease;
     background: no-repeat;
     flex-direction: column;
+      perspective: 1000px;
+       width: 800px;
+  height: 700px;
+  overflow: hidden;
+
 
 }
 
 .landing-page-image img{
-    max-width: 100%;
+    max-width: 117%;
     height: auto;
     border-radius: 20px;
     object-fit: contain;
-    transition: transform 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
 }
 .landing-page-image img:hover{
-  transform: scale(1.08);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: scale(1.08) rotate(2deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.288); /* deeper shadow on hover */
 
 }
 .about-section-page-container{
@@ -179,17 +205,18 @@ font-family: 'Poppins', sans-serif;
   align-items: center;
   display: flex;
   font-family: "Roboto", sans-serif;
-  letter-spacing: 0.8px;
+  letter-spacing: 1.8px;
   font-size: 20px;
    color: #FFD700;
    position: relative;
+   backdrop-filter: blur(4px);
+
 
 }
 .about-section-page-container strong{
-  color: #F7E05A;
-  font: bolder;
-  font-family: sans-serif;
-  font-size: 25px;
+  background: linear-gradient(90deg, #F7E05A, #FF6B35);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
 }
 .about-containt{
   margin-right: 100px;
@@ -202,16 +229,18 @@ font-family: 'Poppins', sans-serif;
   height: 600px;
   display: block;
   border-radius: 15px;
-  background-image: linear-gradient(138deg,#4CAF50,#FF6B35,#2D2D2D );
+  background-image: linear-gradient(135deg,#4CAF50,#FF6B35,#2D2D2D );
+  backdrop-filter: blur(4px);
+
   padding: 7px;
   border: 5px;
   margin-right: 30px;
  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .about-section-image-page img:hover{
-  transform: scale(1.05);
-  box-shadow: 0 20px 40px rgb(255, 107, 53);
-
+  transform: scale(1.05) rotate(2deg);
+ box-shadow: 0 15px 30px rgba(255, 107, 53, 0.6),
+              0 0 20px rgba(247, 224, 90, 0.4);
 }
 .characters-containers{
   background-image: linear-gradient(135deg,#2D2D2D,#FF6B35);
